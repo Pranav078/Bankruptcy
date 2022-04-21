@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {%block title%}
+    {%endblock%}
+    <link rel="stylesheet" href="{% static 'core/base.css' %}">
+    <title>API Bankruptcy Prediction</title>
+</head>
+<body>
+    <header>
+        <h1>Prediction API of company bankruptcy</h1>
+    </header>
+    <div style="position: relative; min-height:600px">
+        {% block content %}
+        {% endblock %}
+        <div id="grp_dd">
+            <div class="div_dd">
+                <!--<div id="drop_down" style="opacity: 0;">
+                    <ul>
+                        <li><a href="{% url 'index'%}">Prediction</a></li>
+                        <hr>
+                        <li><a href="{% url 'viz'%}">Visualisation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <style>
+                        #btn_dd{
+                            background: url("{% static 'img/switch.svg' %}") no-repeat;
+                        }
+                    </style>
+                    <div id="btn_dd">
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        
+    </div>
+    <script>
+        if (window.navigator.onLine == false)
+            alert('You need internet connection to properly visualise this API');
+        document.querySelector('#btn_dd').onclick = function(e){
+            div_dd = document.querySelector('#drop_down');
+            if (div_dd.style.opacity == 0)
+                div_dd.style.opacity = 1;
+            else  
+                div_dd.style.opacity = 0;
+        }
+    </script>
+</body>
+</html>
+
+
+
